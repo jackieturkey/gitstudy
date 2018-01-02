@@ -1,2 +1,6 @@
 
-你还是你,iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+<<<<<<< HEAD
+123456
+=======
+123456
+>>>>>>> featurel

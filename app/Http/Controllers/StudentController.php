@@ -127,9 +127,69 @@ class StudentController extends Controller
     public function orm2()
     {
         //使用模型新增数据
-        $stu = new Student();
-        $stu->name='';
-        var_dump($stu);
+//        $stu = new Student();
+//
+//        $stu ->username = 'zhanyuan';
+//        $stu ->age = 20;
+//        $bool = $stu ->save();
+//        var_dump($bool);
+
+        //使用模型create新增数据
+        $student = Student::create(
+
+                ['username' => 'amy','age' => 30]
+        );
+
+        //firstOrCreate
+
+    }
+
+    public function orm3()
+    {
+
+//        $student = Student::find(17);
+//        $student->username = 'benjamin';
+//        $bool = $student->save();
+//        echo '<pre>';
+//        var_dump($bool);
+
+
+        //批量更新
+        $bool = Student::where('userid','>',16)->update(['age' => 45]);
+        var_dump($bool);
+
+
+    }
+
+    public function orm4()
+    {
+        //通过模型删除
+//       $student = Student::find(17);
+//       $bool = $student->delete();
+//       var_dump($bool);
+
+        //通过主键删除
+//       $num =  Student::destory(18);
+//       var_dump($num);
+
+        //where
+        $num = Student::where('userid','>',15)->delete();
+
+        var_dump($num);
+    }
+
+    public function section1()
+    {
+        $array = [];
+        $students = Student::get();
+        $name = 'jackie';
+        $arr = ['jackie','steven'];
+        return view('student.section1',['name' => $name,'arr' => $arr,'students' => $students]);     //渲染模板    . 或者  /  都可以
+    }
+
+    public function urltest()
+    {
+        return view('student.urltest');
     }
 
 
